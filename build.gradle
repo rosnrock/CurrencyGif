@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.3.12.RELEASE'
+}
+
+apply plugin: 'org.springframework.boot'
+
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.3.12.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:2.2.10.RELEASE'
+}
+
+test {
+    useJUnitPlatform()
+}
