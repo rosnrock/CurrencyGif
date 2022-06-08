@@ -41,7 +41,7 @@ public class MainService {
         double currencyYesterday = getCurrencyValue(feignCurrencyClient.getCurrency(yesterday.toString(), symbol), symbol);
         double currencyDiffer = currencyToday - currencyYesterday;
 
-        if (currencyToday >= currencyYesterday) {
+        if (currencyToday <= currencyYesterday) {
             gifUrl = getGifUrl(feignGiphyClient.getGif("rich"));
             hint = symbol + " укрепляется к USD: " + currencyDiffer;
         } else {
